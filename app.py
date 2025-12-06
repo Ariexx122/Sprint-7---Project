@@ -3,8 +3,7 @@ import plotly.graph_objects as go
 import pandas as pd
 
 
-car_data = pd.read_csv(
-    r"C:\Users\ariex\OneDrive\Documents\Repositories\Sprint-7---Project\vehicles_us.csv")
+car_data = pd.read_csv("vehicles_us.csv")
 
 st.header("Car Sale Ads Data Visualization")
 
