@@ -1,12 +1,8 @@
 # Sprint-7---Project
 
-## How It Works
+## Smart Car Recommender 🚗
 
-This Streamlit app provides interactive visualizations for a dataset of used vehicle listings.
+An interactive Streamlit web application that recommends cars based on user preferences such as budget, mileage, vehicle type, condition, and engine specifications. The app transforms a raw dataset of car sale ads into an intuitive decision-support tool for exploratory analysis and recommendation.
 
-- When launched, the app loads data from `vehicles_us.csv`.
-- Users can choose between two visualization options:
-  - **Histogram**: Displays the distribution of odometer readings across all listings.
-  - **Scatter Plot**: Shows the relationship between odometer readings and other variables (e.g., price or year).
-
-Simply select the desired option using the buttons in the sidebar, and the corresponding Plotly chart will be rendered dynamically.
+## Live Demo
+https://sprint-7-project-tw64.onrender.com
