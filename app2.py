@@ -12,20 +12,20 @@ with st.form("car_preferences"):
     col1, col2 = st.columns(2)
 
     with col1:
-        max_price = st.number_input("Presupuesto máximo ($)",
+        max_price = st.number_input("Maximum budget ($)",
                                     min_value=1000, max_value=50000, value=15000)
-        car_type = st.selectbox("Tipo de vehículo preferido",
+        car_type = st.selectbox("Prefered car type",
                                 ['Any type'] + list(car_data['type'].dropna().unique()))
-        min_cylinders = st.selectbox("Cilindros mínimos",
+        min_cylinders = st.selectbox("Minimum number of cylinders",
                                      [4.0, 6.0, 8.0], index=0)
 
     with col2:
-        max_odometer = st.number_input("Millaje máximo",
+        max_odometer = st.number_input("Maximum odometer reading (miles)",
                                        min_value=10000, max_value=300000, value=150000)
         min_condition = st.selectbox("Condición mínima",
                                      ['salvage', 'fair', 'good', 'like new', 'excellent'])
 
-    submit_button = st.form_submit_button("🔍 Buscar Recomendaciones")
+    submit_button = st.form_submit_button("🔍 Search recommendations")
 
 if submit_button:
     # Filtrar datos según preferencias
@@ -50,7 +50,7 @@ if submit_button:
     ]
 
     # Mostrar resultados
-    st.subheader("Recomendaciones de Autos")
+    st.subheader("Cars matching your preferences:")
     if not filtered_cars.empty:
         for index, row in filtered_cars.head(10).iterrows():
             st.markdown(f"**{row['model_year']}  {row['model']}**")
@@ -59,4 +59,4 @@ if submit_button:
             st.markdown(f"- Condición: {row['condition'].capitalize()}")
             st.markdown("---")
     else:
-        st.write("No se encontraron autos que coincidan con tus preferencias.")
+        st.write("We couldn't find any cars matching your preferences.")
